@@ -27,3 +27,5 @@ example: python commix.py -u "http://192.168.1.10/vulnerabilities/exec/" --data=
 10-Dotdotpwn
 example: dotdotpwn -m http-url -u 'https://0a0900d1039ef266805b6ca5006500cc.web-security-academy.net/image?filename=TRAVERSAL' -f '/etc/passwd' -d 6 -k 'root:' -b
 
+11-Osmedeus
+example: osmedeus scan -t sample.com -f extensive
