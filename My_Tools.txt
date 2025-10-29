@@ -29,3 +29,5 @@ example: dotdotpwn -m http-url -u 'https://0a0900d1039ef266805b6ca5006500cc.web-
 
 11-Osmedeus
 example: osmedeus scan -t sample.com -f extensive
+
+wireshark> stun && !(ip.src == local-ip) && stun.type == 0x0101 
