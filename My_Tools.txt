@@ -32,5 +32,7 @@ example: osmedeus scan -t sample.com -f extensive
 
 12-Hydra
 example: hydra -l admin -P passes.txt 'http-get-form://192.168.1.10/vulnerabilities/brute/:username=^USER^&password=^PASS^&Login=Login:H=Cookie: PHPSESSID=u609j7ku7kakjh53bomt711p22; security=low:F=Username and/or password incorrect.' -V
+example: hydra -l test -P passes.txt 84b237a6325cccae43df1c33e44f9694.ctf.hacker101.com http-post-form "/login:username=^USER^&password=^PASS^:F=Invalid" -m "Cookie: _gid=GA1.2.722017567.1764010890; _ga_W62NXF3JMB=GS2.1.s1764051135$o27$g1$t1764051280$j51$l0$h0; _ga=GA1.1.767889648.1762242288; session=eyJjYXJ0IjpbXX0.aSTrNg.ezQWBu1hx-zmB5oO4NtbGsl_JzU" -f -t 10
+
 
 wireshark> stun && !(ip.src == local-ip) && stun.type == 0x0101 
