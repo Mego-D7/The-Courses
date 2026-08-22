@@ -12,81 +12,29 @@ example: dirb http://192.168.1.10 -H "Cookie: PHPSESSID=nnibls7dak1losghr7q6hbt6
 5-Fuff
 example: ffuf -u "http://192.168.1.10/vulnerabilities/xss_r/?name=FUZZ" -w testlist.txt -H "Cookie: PHPSESSID=nnibls7dak1losghr7q6hbt6j6; security=low" -mc 200 -t 20
 
-<table>
-  <!-- الرأس الرئيسي للجدول -->
-  <thead>
-    <tr style="background-color: #1f2328;">
-      <th width="25%">🎨 Category</th>
-      <th width="15%">🔑 Flag</th>
-      <th width="60%">📋 Purpose (English B1)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- قسم خيارات المطابقة -->
-    <tr>
-      <td rowspan="5" bgcolor="#223b2d" align="center">
-        <strong><font color="#4ade80">🟢 MATCH</font></strong><br>
-        <small><i>(Show only these)</i></small>
-      </td>
-      <td align="center"><code>-mc</code></td>
-      <td>Match by <b>HTTP Status Code</b></td>
-    </tr>
-    <tr>
-      <td align="center"><code>-ml</code></td>
-      <td>Match by <b>Number of Lines</b> in response</td>
-    </tr>
-    <tr>
-      <td align="center"><code>-mr</code></td>
-      <td>Match by <b>Regex Pattern</b> in page content</td>
-    </tr>
-    <tr>
-      <td align="center"><code>-ms</code></td>
-      <td>Match by <b>Response Size</b> (in bytes)</td>
-    </tr>
-    <tr>
-      <td align="center"><code>-mw</code></td>
-      <td>Match by <b>Word Count</b> in response</td>
-    </tr>
-    <!-- قسم خيارات الفلترة -->
-    <tr>
-      <td rowspan="5" bgcolor="#3b2222" align="center">
-        <strong><font color="#f87171">🔴 FILTER</font></strong><br>
-        <small><i>(Hide these)</i></small>
-      </td>
-      <td align="center"><code>-fc</code></td>
-      <td>Filter (hide) by <b>HTTP Status Code</b></td>
-    </tr>
-    <tr>
-      <td align="center"><code>-fl</code></td>
-      <td>Filter (hide) by <b>Number of Lines</b></td>
-    </tr>
-    <tr>
-      <td align="center"><code>-fr</code></td>
-      <td>Filter (hide) by <b>Regex Pattern</b></td>
-    </tr>
-    <tr>
-      <td align="center"><code>-fs</code></td>
-      <td>Filter (hide) by <b>Response Size</b> (in bytes)</td>
-    </tr>
-    <tr>
-      <td align="center"><code>-fw</code></td>
-      <td>Filter (hide) by <b>Word Count</b></td>
-    </tr>
-    <!-- قسم خيارات السرعة وحماية الجهاز -->
-    <tr>
-      <td rowspan="2" bgcolor="#3b3522" align="center">
-        <strong><font color="#fbbf24">⚡ SPEED</font></strong><br>
-        <small><i>(Hardware safe)</i></small>
-      </td>
-      <td align="center"><code>-t 10</code></td>
-      <td>Set low <b>Threads</b> to lower CPU usage</td>
-    </tr>
-    <tr>
-      <td align="center"><code>-rate 10</code></td>
-      <td>Limit tool to exactly <b>10 requests per second</b></td>
-    </tr>
-  </tbody>
-</table>
+[🟢 MATCH OPTIONS] -> (Show only these responses)
+------------------------------------------------------------------------
+|  -mc    |  Match by HTTP Status Code                                |
+|  -ml    |  Match by Number of Lines in response                     |
+|  -mr    |  Match by Regex Pattern in page content                   |
+|  -ms    |  Match by Response Size (in bytes)                        |
+|  -mw    |  Match by Word Count in response                          |
+------------------------------------------------------------------------
+
+[🔴 FILTER OPTIONS] -> (Hide these responses / Clear False Positives)
+------------------------------------------------------------------------
+|  -fc    |  Filter (hide) by HTTP Status Code                        |
+|  -fl    |  Filter (hide) by Number of Lines                         |
+|  -fr    |  Filter (hide) by Regex Pattern                           |
+|  -fs    |  Filter (hide) by Response Size (in bytes)                |
+|  -fw    |  Filter (hide) by Word Count                              |
+------------------------------------------------------------------------
+
+[⚡ SPEED OPTIONS] -> (Hardware Safe & Low CPU Usage)
+------------------------------------------------------------------------
+|  -t 10  |  Set low Threads to lower your computer's CPU usage        |
+|  -rate10|  Limit the tool to exactly 10 requests per second          |
+------------------------------------------------------------------------
 
 6-Nuclei
 example: nuclei -u "http://192.168.1.10/vulnerabilities/xss_r/?name=Magdy" -H "Cookie: PHPSESSID=nnibls7dak1losghr7q6hbt6j6; security=low" --timeout 10 
